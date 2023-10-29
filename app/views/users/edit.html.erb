@@ -1,2 +1,13 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>ユーザー編集</h1>
+<%= form_with model:@user,url:user_path(@user.id),method: :patch do |f| %>
+  <p>名前</p>
+  <%= f.text_field :name %>
+
+  <p>メールアドレス</p>
+  <%= f.email_field :email %>
+
+  <%= f.submit "保存" %><br>
+
+  <%= link_to "詳細画面へ戻る",user_path(@user.id) %>
+  <%= link_to "ユーザー一覧",users_path %>
+<% end %>
