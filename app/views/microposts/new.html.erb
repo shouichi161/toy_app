@@ -1,4 +1,13 @@
 <h1>New Micropost</h1>
+<% if @micropost.errors.any? %>
+  <%= @micropost.errors.count %>件のエラーが発生しました
+  <ul>
+    <% @micropost.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= form_with model:@micropost,url:microposts_path,method: :post do |f| %>
   <p>content</p>
   <%= f.text_area :content %><br>
