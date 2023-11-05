@@ -1,2 +1,6 @@
 <h1>Microposts#show</h1>
-<p>Find me in app/views/microposts/show.html.erb</p>
+<%= @micropost.content %>
+
+<% if @micropost.user_id == current_user.id %>
+  <%= link_to "編集",edit_micropost_path(@micropost.id) %>
+<% end %>
