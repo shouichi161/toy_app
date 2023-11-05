@@ -15,6 +15,8 @@
       <% if user_signed_in? %>
         <li>
           <%= link_to "ログアウト",destroy_user_session_path, method: :delete %>
+          <%= link_to "ユーザー一覧",users_path %>
+          <%= link_to "new micropost",new_micropost_path %>
         </li>
       <% else %>
         <li>
