@@ -8,4 +8,8 @@
 <% if @user.id == current_user.id %>
   <%= link_to "編集",edit_user_path(@user.id) %>
 <% end %>
-<%= link_to "ユーザー一覧",users_path %>
+<%= link_to "ユーザー一覧",users_path %><br>
+
+<% @micropost.each do |micropost| %>
+  <%= micropost.content %><br>
+<% end %>
