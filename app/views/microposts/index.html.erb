@@ -1,2 +1,9 @@
-<h1>Microposts#index</h1>
-<p>Find me in app/views/microposts/index.html.erb</p>
+<h1>Microposts</h1>
+
+<% @microposts.each do |micropost| %>
+  <p>postcomments: <%= micropost.content %></p>
+  <p>User: <%= micropost.user_id %></p>
+  <%= link_to "Show this micropost",micropost_path(micropost.id) %><br>
+<% end %>
+
+<%= link_to "New micropost",new_micropost_path %>

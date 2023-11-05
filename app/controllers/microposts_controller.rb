@@ -2,6 +2,7 @@ class MicropostsController < ApplicationController
   def new
     @micropost = Micropost.new
   end
+
   def create
     micropost = Micropost.new(micropost_params)
     micropost.user_id = current_user.id
@@ -10,6 +11,7 @@ class MicropostsController < ApplicationController
   end
 
   def index
+    @microposts = Micropost.all
   end
 
   def show
